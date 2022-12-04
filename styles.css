@@ -27,7 +27,8 @@ main{
     max-width: 1230px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows:  auto 2fr 1fr .5fr auto;
+    grid-auto-rows: auto 1fr;
+    /* grid-template-rows:  auto 2fr 1fr .5fr auto; */
     grid-template-areas: 
     "nav nav nav"
     "image-banner image-banner sidebar"
@@ -68,7 +69,7 @@ li:nth-child(-n+5){
 
 
 
-/********** First Grid (image) *********/
+/********** (image) *********/
 
 .images{
     background: url(./assets/images/image-web-3-desktop.jpg);
@@ -81,24 +82,23 @@ li:nth-child(-n+5){
 }
 
 
-/****** Second Grid (sidebar) **********/
+/****** (sidebar) **********/
 #sidebar-articles{
     background-color: var(--very-dark-blue);
     padding: 1em;
     grid-area: sidebar;
-
 }
 
 .topics-heading{
     color: var(--soft-orange);
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
 }
 
 .article-heading{
     color: var(--off-white);
-    font-size: 1rem;
+    font-size: 2rem;
     font-weight: 700;
     margin-bottom: 1rem;
 }
@@ -119,7 +119,7 @@ aside>section>p:nth-child(-n+3){
     margin-bottom: 1rem;
 }
 
-/********** Third Grid (Site Heading) *******/
+/********** (Site Heading) *******/
 
 .heading-site{
     font-weight: 800;
@@ -128,7 +128,7 @@ aside>section>p:nth-child(-n+3){
     padding-right: 1rem;
 }
 
-/******* Fourth Grid (ReadMore) **********/
+/******* (ReadMore) **********/
 
 .readmore-section{
     grid-area: read-more;
@@ -159,10 +159,45 @@ aside>section>p:nth-child(-n+3){
     
 }
 
-
-
-.top-articles{
+/***** (Top Articles) ****/
+.top-ranked-articles-grp{
+    display: flex;
     grid-area: articles;
+    justify-content: space-between;
+}
+
+/* .top-ranked-articles-grp>article>img{
+    float: left;
+    width: 25%;
+} */
+
+.top-ranked-articles-grp>article{
+    border: solid;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.article-rating{
+    color: var(--grayish-blue);
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.7;
+    
+}
+
+.top-article-titles{
+    color: var(--very-dark-blue);
+    font-weight: 800;
+    font-size: 1rem;
+    line-height: 2;
+
+}
+
+.top-articles-p{
+    color: var(--dark-grayish-blue);
+    line-height: 1.7;
 }
 
 a{
